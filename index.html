@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Community Issue Reporter</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Community Issue Reporter</h1>
+
+    <form id="issue-form">
+      <label>
+        Your name
+        <input type="text" name="name" id="name" placeholder="Optional" />
+      </label>
+
+      <label>
+        Issue title
+        <input type="text" name="title" id="title" required placeholder="Short title" />
+      </label>
+
+      <label>
+        Description
+        <textarea name="description" id="description" required placeholder="What did you see?"></textarea>
+      </label>
+
+      <fieldset>
+        <legend>Location</legend>
+        <div id="location-status">Not captured</div>
+        <button type="button" id="capture-location">Capture my location</button>
+      </fieldset>
+
+      <label>
+        Photo (optional)
+        <input type="file" name="photo" id="photo" accept="image/*" />
+      </label>
+
+      <div class="actions">
+        <button type="submit" id="submit">Submit</button>
+      </div>
+
+      <div id="result" role="status" aria-live="polite"></div>
+    </form>
+
+    <section id="debug" aria-hidden="true">
+      <h2>Debug / Payload</h2>
+      <pre id="payload"></pre>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
